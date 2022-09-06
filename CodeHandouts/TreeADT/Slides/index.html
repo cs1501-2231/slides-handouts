@@ -24,7 +24,6 @@ public interface TreeInterface&lt;T> {
   public int getHeight() throws EmptyTreeException;
   public int getNumberOfNodes() throws EmptyTreeException;
   public boolean isEmpty();
-  public void levelOrderTraverse();
   public void clear();
 }
 					</code></pre>
@@ -48,9 +47,6 @@ public class EmptyTreeException extends Exception {
 					  public void buildTree(T rootData,
 					                        BinaryTreeInterface&lt;T> left,
 					                        BinaryTreeInterface&lt;T> right);
-					  public void preorderTraverse();
-					  public void inorderTraverse();
-					  public void postorderTraverse();
 					}
 				</code></pre>
 				</section>
