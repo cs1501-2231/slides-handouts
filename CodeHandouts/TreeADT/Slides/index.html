@@ -180,15 +180,15 @@ public class EmptyTreeException extends Exception {
 
 						  private void privateBuildTree(T rootData, BinaryTree&lt;T> leftTree,
 						                                BinaryTree&lt;T> rightTree){
-						      root = new BinaryNode&lt;>(rootData);
+						      BinaryNode<T> newRoot = new BinaryNode&lt;>(rootData);
 						      if((leftTree != null) && (!leftTree.isEmpty())){
-						        root.setLeftChild(leftTree.getRoot());
+						        newRoot.setLeftChild(leftTree.getRoot());
 						      }
 						      if((rightTree != null)&&(!rightTree.isEmpty())){
 						        if(leftTree == rightTree) {
-						          root.setRightChild(rightTree.getRoot().copy());
+									newRoot.setRightChild(rightTree.getRoot().copy());
 						        } else {
-						          root.setRightChild(rightTree.getRoot());
+									newRoot.setRightChild(rightTree.getRoot());
 						        }
 						      }
 
@@ -198,6 +198,7 @@ public class EmptyTreeException extends Exception {
 						      if((rightTree != null)&&(rightTree != this)){
 						        rightTree.clear();
 						      }
+							  root = newRoot;
 						  }
 
 						  public T getRootData() throws EmptyTreeException {
